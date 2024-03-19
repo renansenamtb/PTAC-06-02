@@ -16,17 +16,20 @@ export default function Main(){
            id=""
            onChange={(event)=> setNome(event.target.value)}
            />
-
-           <label htmlFor="telefone">Telefone</label>
+           {nome}
+<br></br>
+<br></br>
+           <label htmlFor="telefone">Telefone:</label>
            <input
-           type="tel"
-           id="telefone"
-           value={telefone}
-           onChange={(event) => setTelefone(event.target.value)}
+           type=""
+           name=""
+           id=""
+            onChange={(event) => setTelefone(event.target.value)}
             />
-
-
-        <button type="submit">Enviar</button> 
+{telefone}
+<br></br>
+<br></br>
+        <button type="submit">Salvar</button> 
         </form>
         </main>
     );
