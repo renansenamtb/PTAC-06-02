@@ -26,7 +26,7 @@ export default function Main(){
            id=""
             onChange={(event) => setTelefone(event.target.value)}
             />
-{telefone}
+            {telefone}
 <br></br>
 <br></br>
         <button type="submit">Salvar</button> 
