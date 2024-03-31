@@ -4,8 +4,26 @@ export default function Main(){
 
     const [nome, setNome] = useState("");
     const [telefone, setTelefone] = useState("");
+    const [listaContatos, setContatos] = useState([]);
 
-    
+        const registrar = (event) => {
+            event.preventDefault();
+            alert("arrume isso ai patron");
+            setContatos([...listaContatos,
+            {
+            nomeSalvo: nome,
+            telefoneSalvo: telefone
+
+            }
+            
+            ]);
+            console.table(listaContatos);
+
+
+
+
+
+        }
     return(
         <main>
             <form>
@@ -14,9 +32,10 @@ export default function Main(){
            type="text"
            name=""
            id=""
+           value={nome}
            onChange={(event)=> setNome(event.target.value)}
            />
-           {nome}
+          
 <br></br>
 <br></br>
            <label htmlFor="telefone">Telefone:</label>
@@ -24,9 +43,10 @@ export default function Main(){
            type=""
            name=""
            id=""
+           value={telefone}
             onChange={(event) => setTelefone(event.target.value)}
             />
-{telefone}
+
 <br></br>
 <br></br>
         <button type="submit">Salvar</button> 

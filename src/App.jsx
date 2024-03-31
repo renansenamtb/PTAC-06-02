@@ -5,7 +5,7 @@ import "./globals.css";
 export default function App() {
 
   return(
-    <div>
+    <main>
       <Header/>
       <br></br>
       <br></br>
@@ -14,6 +14,6 @@ export default function App() {
       <br></br>
       <Main/>
       <Footer/>
-    </div>
+    </main>
   );
 }
