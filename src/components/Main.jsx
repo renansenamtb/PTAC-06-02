@@ -1,57 +1,73 @@
 import { useState } from "react";
 
 export default function Main(){
+const [nome, setNome] = useState("");
+const [telefone, setTelefone] = useState();
+const [listaContatos, setContatos] = useState([]);
+const [cpf, setCpf] = useState();
 
-    const [nome, setNome] = useState("");
-    const [telefone, setTelefone] = useState("");
-    const [listaContatos, setContatos] = useState([]);
-
-        const registrar = (event) => {
-            event.preventDefault();
-            alert("arrume isso ai patron");
+    const registrar = (event) => {
+        event.preventDefault();
+            alert("ta certo, eu que fiz");
             setContatos([...listaContatos,
             {
             nomeSalvo: nome,
-            telefoneSalvo: telefone
-
+            telefoneSalvo: telefone,
+            cpfSalvo: cpf,
             }
-            
             ]);
             console.table(listaContatos);
 
-
-
-
-
-        }
+      }
     return(
         <main>
-            <form>
-                <label htmlFor="nome">Nome:</label>
-           <input
-           type="text"
-           name=""
-           id=""
-           value={nome}
-           onChange={(event)=> setNome(event.target.value)}
-           />
-          
-<br></br>
-<br></br>
-           <label htmlFor="telefone">Telefone:</label>
-           <input
-           type=""
-           name=""
-           id=""
-           value={telefone}
-            onChange={(event) => setTelefone(event.target.value)}
-            />
+            <form onSubmit={registrar}>
+                <label htmlFor="nome">Nome :</label>
+                <input
+                type="text"
+                name=""
+                id=""
+               
+                onChange={(event)=> setNome(event.target.value)}
+                />
 
+{nome}
+                <br></br>
+                
+
+
+                     <label htmlFor="telefone">Telefone :</label>
+                   <input
+                     type=""
+                      name=""
+                      id=""
+                      
+                    onChange={(event) => setTelefone(event.target.value)}
+                                          
+   />
+      {telefone}   
+   
+   <br></br>
+            
+
+
+<label htmlFor="cpf">Cpf :</label>
+<input
+type=""
+name=""
+id=""
+
+onChange={(event) => setCpf(event.target.value)}
+/>
+
+
+{cpf}
 <br></br>
-<br></br>
-        <button type="submit">Salvar</button> 
-        </form>
+
+                <button type="submit">Enviar</button>
+
+
+            </form>
         </main>
     );
-
 }
