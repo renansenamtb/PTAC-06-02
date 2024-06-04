@@ -8,7 +8,7 @@ const [cpf, setCpf] = useState();
 
     const registrar = (event) => {
         event.preventDefault();
-            alert("ta certo, eu que fiz");
+            alert("Adicionado com Sucesso");
             setContatos([...listaContatos,
             {
             nomeSalvo: nome,
@@ -18,6 +18,19 @@ const [cpf, setCpf] = useState();
             ]);
             console.table(listaContatos);
 
+      }
+      const remover = (id) => {
+        const novaLista = listaContatos.filter(
+            (contato, index)=>{
+                if(index !== id){
+                    return contato
+                }else{
+                    return null;
+                }
+            }
+        );
+        setContatos(novaLista);
+        
       }
     return(
         <main>
@@ -53,9 +66,9 @@ const [cpf, setCpf] = useState();
 
 <label htmlFor="cpf">Cpf :</label>
 <input
-type=""
+type="text"
 name=""
-id=""
+id="cpf"
 
 onChange={(event) => setCpf(event.target.value)}
 />
@@ -68,6 +81,16 @@ onChange={(event) => setCpf(event.target.value)}
 
 
             </form>
+
+        {listaContatos.map((contato, index) =>
+        <div key={index}>
+            <p>{contato.nomeSalvo}</p>
+            <p>{contato.telefoneSalvo}</p>
+            <p>{contato.cpfSalvo}</p>
+            <button onClick={()=> remover(index)}>X</button>
+        </div>
+        )}
+
         </main>
     );
 }
